@@ -1,0 +1,38 @@
+{
+  "api": {
+    "base_url": "https://bharatpashudhan.gov.in/api/v1",
+    "username": "YOUR_USERNAME",
+    "password": "YOUR_PASSWORD",
+    "api_key": "YOUR_API_KEY"
+  },
+  "connection": {
+    "timeout_seconds": 30,
+    "retry_attempts": 3,
+    "retry_delay_seconds": 5
+  },
+  "sync": {
+    "auto_sync": false,
+    "sync_interval_minutes": 60,
+    "max_batch_size": 50
+  },
+  "endpoints": {
+    "auth": "/auth/login",
+    "animal_info": "/animals/{animal_id}",
+    "classification": "/atc/classifications",
+    "batch_sync": "/atc/batch",
+    "history": "/atc/history/{animal_id}"
+  },
+  "field_mapping": {
+    "animal_id": "tag_number",
+    "breed": "breed_name",
+    "overall_score": "atc_score",
+    "classification": "atc_classification",
+    "body_length": "body_length_cm",
+    "height_at_withers": "height_cm",
+    "chest_width": "chest_width_cm",
+    "back_angle": "back_angle_deg",
+    "rump_angle": "rump_angle_deg",
+    "leg_structure": "leg_score",
+    "overall_proportion": "proportion_score"
+  }
+}

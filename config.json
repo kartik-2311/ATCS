@@ -1,0 +1,80 @@
+{
+  "system": {
+    "log_level": "INFO",
+    "log_file": "logs/atc_system.log",
+    "data_dir": "data",
+    "temp_dir": "temp"
+  },
+  "camera": {
+    "default_source": 0,
+    "resolution": {
+      "width": 1280,
+      "height": 720
+    },
+    "auto_capture": false
+  },
+  "database": {
+    "path": "data/atc_database.db",
+    "backup_dir": "data/backups",
+    "auto_backup": true,
+    "backup_interval_days": 7
+  },
+  "ai_model": {
+    "model_path": "models/animal_classifier.h5",
+    "confidence_threshold": 0.7,
+    "use_gpu": true,
+    "batch_size": 1
+  },
+  "scoring": {
+    "breed_standards": {
+      "Gir": {
+        "body_length": {"min": 130, "max": 170, "optimal": 150, "weight": 0.15},
+        "height_at_withers": {"min": 120, "max": 150, "optimal": 135, "weight": 0.15},
+        "chest_width": {"min": 40, "max": 60, "optimal": 50, "weight": 0.1},
+        "back_angle": {"min": 0, "max": 10, "optimal": 5, "weight": 0.1},
+        "rump_angle": {"min": 0, "max": 10, "optimal": 5, "weight": 0.15},
+        "leg_structure": {"min": 0, "max": 10, "optimal": 8, "weight": 0.2},
+        "overall_proportion": {"min": 0, "max": 10, "optimal": 8, "weight": 0.15}
+      },
+      "Sahiwal": {
+        "body_length": {"min": 125, "max": 165, "optimal": 145, "weight": 0.15},
+        "height_at_withers": {"min": 115, "max": 145, "optimal": 130, "weight": 0.15},
+        "chest_width": {"min": 38, "max": 58, "optimal": 48, "weight": 0.1},
+        "back_angle": {"min": 0, "max": 10, "optimal": 5, "weight": 0.1},
+        "rump_angle": {"min": 0, "max": 10, "optimal": 5, "weight": 0.15},
+        "leg_structure": {"min": 0, "max": 10, "optimal": 8, "weight": 0.2},
+        "overall_proportion": {"min": 0, "max": 10, "optimal": 8, "weight": 0.15}
+      },
+      "Murrah": {
+        "body_length": {"min": 140, "max": 180, "optimal": 160, "weight": 0.15},
+        "height_at_withers": {"min": 130, "max": 160, "optimal": 145, "weight": 0.15},
+        "chest_width": {"min": 45, "max": 65, "optimal": 55, "weight": 0.1},
+        "back_angle": {"min": 0, "max": 10, "optimal": 5, "weight": 0.1},
+        "rump_angle": {"min": 0, "max": 10, "optimal": 5, "weight": 0.15},
+        "leg_structure": {"min": 0, "max": 10, "optimal": 8, "weight": 0.2},
+        "overall_proportion": {"min": 0, "max": 10, "optimal": 8, "weight": 0.15}
+      }
+    },
+    "classification_thresholds": {
+      "excellent": 90,
+      "very_good": 80,
+      "good": 70,
+      "fair": 60,
+      "poor": 0
+    }
+  },
+  "bpa_integration": {
+    "api_url": "https://bharatpashudhan.gov.in/api/v1",
+    "timeout_seconds": 30,
+    "retry_attempts": 3,
+    "retry_delay_seconds": 5,
+    "auto_sync": false
+  },
+  "ui": {
+    "theme": "default",
+    "language": "en",
+    "font_size": "medium",
+    "show_tooltips": true,
+    "confirm_actions": true
+  }
+}
